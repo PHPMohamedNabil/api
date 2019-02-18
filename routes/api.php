@@ -17,10 +17,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResources('/products','ProductController');
+Route::apiResource('/products','ProductController');
 
 Route::group(['prefix'=>'products'],function(){
 
-Route::apiResources('/{products}/reviews','ReviewController');
+Route::apiResource('/{products}/reviews','ReviewController');
 
 });
